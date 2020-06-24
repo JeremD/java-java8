@@ -13,16 +13,24 @@ import java.util.List;
 
 /**
  * Exercice 01 - Filter
+ * 
+ * L'interface PersonPredicate a une seule méthode : filter
  */
 public class Lambda_01_Test {
 
     // tag::PersonPredicate[]
+	@FunctionalInterface
     interface PersonPredicate {
         boolean test(Person p);
     }
     // end::PersonPredicate[]
 
     // tag::filter[]
+    /**
+     * @param persons Liste de personnes
+     * @param predicate prérecit des personnes
+     * @return filtrage de personnes
+     */
     private List<Person> filter(List<Person> persons, PersonPredicate predicate) {
         List<Person> filteredPersons = new ArrayList<Person>();
     	for (Person p: persons){
@@ -79,7 +87,6 @@ public class Lambda_01_Test {
     public void test_filter_by_password() throws Exception {
 
         List<Person> personList = Data.buildPersonList(100);
-
         String passwordSha512Hex = "ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff";
         
         // Deux filtres en même temps : age > 49 et bon hash du mot de passe
