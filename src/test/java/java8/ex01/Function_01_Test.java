@@ -16,7 +16,7 @@ public class Function_01_Test {
 	// tag::intToPerson[]
 
 	/**
-	 * Convertion d'un entier en objet Person
+	 * Convertir un entier en objet Person
 	 * 
 	 * @param integer
 	 * @return objet Person
@@ -46,7 +46,7 @@ public class Function_01_Test {
 
 	// tag::personToAccount[]
 	/**
-	 * Convertion d'une personne en objet Account
+	 * Convertir une personne en objet Account
 	 * 
 	 * @param integer
 	 * @return objet Person
@@ -98,9 +98,9 @@ public class Function_01_Test {
 	@Test
 	public void test_intToAccount_with_AndThen() throws Exception {
 
-		// TODO invoquer la fonction intToAccountWithAndThen avec l'entier 11
+		// intToAccountWithAndThen avec l'entier 11
 		Account result = intToAccountWithAndThen.apply(11);
-
+		// résultat prénom account à 11 attendu
 		assert result.getOwner().getFirstname().equals("first_11");
 		assert result.getBalance().equals(1000);
 	}

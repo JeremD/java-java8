@@ -11,24 +11,36 @@ import java.util.function.BiFunction;
  */
 public class Function_02_Test {
 
-    //  tag::buildAccount[]
-    // TODO Compléter la fonction buildAccount
-    // TODO la fonction possède 2 paramètres en entrée : une personne et un solde
-    BiFunction<Person, Integer, Account> buildAccount = null;
-    //  end::buildAccount[]
+	// tag::buildAccount[]
 
-    @Test
-    public void test_build_account() throws Exception {
+	/**
+	 * Créer le compte d'une personne
+	 * 
+	 * @param person
+	 * @param integer
+	 * @return objet Account
+	 */
+	BiFunction<Person, Integer, Account> buildAccount = (person, integer) -> {
+		Account toAccount = new Account();
+		toAccount.setOwner(person);
+		toAccount.setBalance(integer);
+		return toAccount;
+	};
+	// end::buildAccount[]
 
-        // TODO invoquer la fonction buildAccount pour que le test soit passant
-        Account account = null;
+	@Test
+	public void test_build_account() throws Exception {
 
-        assert account.getBalance().equals(500);
-        assert account.getOwner().getFirstname().equals("John");
-        assert account.getOwner().getLastname().equals("France");
-        assert account.getOwner().getAge().equals(80);
-        assert account.getOwner().getPassword().equals("pass");
-    }
+		// Création d'une personne
+		Person person = new Person("John", "France", 80, "pass");
+		// Invocation de buildAccount
+		Account account = buildAccount.apply(person, 500);
 
+		assert account.getBalance().equals(500);
+		assert account.getOwner().getFirstname().equals("John");
+		assert account.getOwner().getLastname().equals("France");
+		assert account.getOwner().getAge().equals(80);
+		assert account.getOwner().getPassword().equals("pass");
+	}
 
 }
