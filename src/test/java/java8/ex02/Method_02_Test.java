@@ -22,7 +22,7 @@ public class Method_02_Test {
 		 * @return le nombre de personnes
 		 */
 		default String format() {
-			return "[" + findAll().size() + "]";
+			return "[" + findAll().size() + " persons]";
 		}
 	}
 	// end::IDao[]
@@ -51,11 +51,13 @@ public class Method_02_Test {
 
 	@Test
 	public void test_daoA_format() throws Exception {
-
+		Person Danny = new Person();
+		Person Charlotte = new Person();
+		Danny.setAge(20);
 		DaoA daoA = new DaoA();
 		daoA.format();
 		String result = null;
-
-		"DaoA[20 persons]".equals(result);
+		// chaine de caractère attendue
+		"DaoA[2 persons]".equals(result);
 	}
 }
