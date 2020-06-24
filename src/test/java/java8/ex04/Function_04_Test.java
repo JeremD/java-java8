@@ -34,7 +34,7 @@ public class Function_04_Test {
 	 * @param Person age
 	 * @return boolean true si c'est un adulte
 	 */
-    Predicate<Person> adult = (Person age) -> (age.getAge() >= 18);
+    Predicate<Person> adult = age -> age.getAge() >= 18;
     // end::adult[]
 
     @Test
@@ -51,10 +51,10 @@ public class Function_04_Test {
 
     // tag::predicateand[]
     // le prédicat vérifie que le nom est "France"
-    Predicate<Person> lastnameIsFrance = (Person p) -> p.getLastname().equals("France");
+    Predicate<Person> lastnameIsFrance = p -> p.getLastname().equals("France");
 
     // le prédicat vérifie que le prénom est "Armor"
-    Predicate<Person> firstnameIsArmor = (Person p) -> p.getFirstname().equals("Armor");
+    Predicate<Person> firstnameIsArmor = p -> p.getFirstname().equals("Armor");
     // end::predicateand[]
 
     @Test
@@ -62,8 +62,8 @@ public class Function_04_Test {
 
         List<Person> personList = Data.buildPersonList();
 
-        // TODO chaîner les prédicats adult, lastnameIsFrance et firstnameIsArmor avec la méthode and
-        List<Person> result = filter(personList, lastnameIsFrance).andThen(filter(personList, firstnameIsArmor));
+        // Chaînage des prédicats adult, lastnameIsFrance et firstnameIsArmor avec la méthode and
+        List<Person> result = filter(personList, adult.and(lastnameIsFrance).and(firstnameIsArmor));
 
         assert result.size() == 1;
         assert result.get(0).getFirstname().equals("Armor");

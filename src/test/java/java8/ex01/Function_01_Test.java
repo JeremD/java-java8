@@ -21,7 +21,7 @@ public class Function_01_Test {
 	 * @param integer
 	 * @return objet Person
 	 */
-	private Function<Integer, Person> intToPerson = (Integer entier) -> {
+	private Function<Integer, Person> intToPerson = entier -> {
 		Person toPerson = new Person();
 		toPerson.setFirstname("first_" + entier);
 		toPerson.setLastname("last_" + entier);
@@ -51,7 +51,7 @@ public class Function_01_Test {
 	 * @param integer
 	 * @return objet Person
 	 */
-	private Function<Person, Account> personToAccount = (Person person) -> {
+	private Function<Person, Account> personToAccount = person -> {
 		Account toAccount = new Account();
 		toAccount.setOwner(person);
 		toAccount.setBalance(1000);
