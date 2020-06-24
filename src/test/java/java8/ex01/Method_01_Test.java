@@ -23,7 +23,7 @@ public class Method_01_Test {
 		 * 
 		 * @return totalAge L'âge total
 		 */
-		public default int sumAge() {
+		default int sumAge() {
 			int totalAge = 0;
 			for (Person age : findAll()) {
 				totalAge += age.getAge();
