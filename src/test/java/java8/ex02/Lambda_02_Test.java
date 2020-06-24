@@ -15,6 +15,7 @@ import java.util.List;
 public class Lambda_02_Test {
 
     // tag::PersonToAccountMapper[]
+	@FunctionalInterface
     interface PersonToAccountMapper {
         Account map(Person p);
     }
@@ -35,13 +36,13 @@ public class Lambda_02_Test {
 
         List<Person> personList = Data.buildPersonList(100);
 
-        // TODO transformer la liste de personnes en liste de comptes
-        // TODO tous les objets comptes ont un solde à 100 par défaut
         // map pour transformer la liste des 100 personnes en liste de compte 
         List<Account> result = map(personList, p -> new Account (p, 100));
-        	
+        
+        // Les comptes ont un solde à 100 par défaut
         assert result.size() == personList.size();
         for (Account account : result) {
+        	// résultat personne en compte attendu 
             assert account.getBalance().equals(100);
             assert account.getOwner() != null;
         }
