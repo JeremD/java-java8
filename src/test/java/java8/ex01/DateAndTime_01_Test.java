@@ -18,14 +18,14 @@ public class DateAndTime_01_Test {
 	@Test
 	public void test_date() {
 
-		// TODO modifier les paramètres pour que le test soit passant
+		// modifier les paramètres pour que le test soit passant
 		@SuppressWarnings("deprecation")
 		Date date = new Date(117, 2, 24, 01, 02, 03);
 
 		assertThat(date.toString(), is("Fri Mar 24 01:02:03 CET 2017"));
 
 		// une date est mutable... :-(
-		// TODO modifier le jour de la date pour que le test soit passant
+		// modifier le jour de la date pour que le test soit passant
 		Calendar cal = Calendar.getInstance();
 		cal.set(Calendar.DAY_OF_MONTH, 24);
 		

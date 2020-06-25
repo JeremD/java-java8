@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.UnsupportedTemporalTypeException;
 import java.util.Date;
@@ -71,19 +72,18 @@ public class DateAndTime_02_Test {
         // créer un objet LocalDate à la date 11/03/2015 avec la méthode of
         LocalDate localDate = LocalDate.of(2015, 03, 11);
 
-        // TODO Formatter la date pour avoir l'affichage suivant : "11/03/2015 00:00:00"
-        localDate.format(null);
+        // formatter la date pour avoir l'affichage suivant : "11/03/2015 00:00:00"
+        localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss"));
     }
 
     @Test
     public void test_with() {
 
-        // TODO créer un objet LocalDate à la date 10/01/2000
-        // TODO utiliser la méthode of
-        LocalDate localDate = null;
+        // créer un objet LocalDate à la date 10/01/2000
+        LocalDate localDate = LocalDate.of(2000, 01, 10);
 
-        // TODO transformer la date précédente en 05/02/2015
-        LocalDate result = null;
+        // transformer la date précédente en 05/02/2015
+        LocalDate result = localDate.withYear(2015).plus(1, ChronoUnit.MONTHS).with(ChronoField.DAY_OF_MONTH, 05);
 
         assertThat(result.getYear(), is(2015));
         assertThat(result.getMonth(), is(Month.FEBRUARY));
