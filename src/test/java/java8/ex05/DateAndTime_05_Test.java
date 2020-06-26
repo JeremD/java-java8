@@ -31,10 +31,6 @@ public class DateAndTime_05_Test {
         assertThat(duration.toNanos(), is(14_520_000_000_000L));
         assertThat(duration.toMillis(), is(14_520_000L));
         assertThat(duration.toDays(), is(0L));
-
     }
-
     // Duration
-
-
 }

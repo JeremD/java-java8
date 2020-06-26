@@ -27,7 +27,7 @@ public class DateAndTime_01_Test {
 		// une date est mutable... :-(
 		// modifier le jour de la date pour que le test soit passant
 		date.setDate(25);
-		
+
 		assertThat(date.toString(), is("Sat Mar 25 01:02:03 CET 2017"));
 	}
 
@@ -36,7 +36,7 @@ public class DateAndTime_01_Test {
 	@Test
 	public void test_calendar() throws Exception {
 		Calendar calendar = Calendar.getInstance();
-		
+
 		// modifier l'objet calendar pour que le test soit passant
 		calendar.set(2017, 2, 24, 01, 02, 03);
 		assertThat(calendar.getTime().toString(), is("Fri Mar 24 01:02:03 CET 2017"));

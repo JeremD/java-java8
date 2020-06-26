@@ -16,22 +16,22 @@ import static org.junit.Assert.assertThat;
  */
 public class DateAndTime_07_Test {
 	@SuppressWarnings("deprecation")
-    @Test
-    public void test_date_to_localdate() throws Exception {
+	@Test
+	public void test_date_to_localdate() throws Exception {
 
-        // Créer une date Java 1 (12/02/2017)
-        Date date = new Date(117, 01, 12);
-    	
-        // transformer la date en Instant
-    	Instant now = date.toInstant();
-    	
-        // transformer la date en LocalDate
-        LocalDate result = LocalDate.of(date.getYear()+1900, date.getMonth()+1, date.getDate());
+		// Créer une date Java 1 (12/02/2017)
+		Date date = new Date(117, 01, 12);
 
-        // valoriser les différentes variables afin de rendre le test passant
-        assertThat(result.getYear(), is(2017));
-        assertThat(result.getMonth(), is(Month.FEBRUARY));
-        assertThat(result.getDayOfMonth(), is(12));
+		// transformer la date en Instant
+		Instant now = date.toInstant();
 
-    }
+		// transformer la date en LocalDate
+		LocalDate result = LocalDate.of(date.getYear() + 1900, date.getMonth() + 1, date.getDate());
+
+		// valoriser les différentes variables afin de rendre le test passant
+		assertThat(result.getYear(), is(2017));
+		assertThat(result.getMonth(), is(Month.FEBRUARY));
+		assertThat(result.getDayOfMonth(), is(12));
+
+	}
 }

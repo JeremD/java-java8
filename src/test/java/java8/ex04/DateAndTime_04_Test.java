@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  */
 public class DateAndTime_04_Test {
 
-    @Test
+	@Test
 	public void test_localDateTime_of() {
 
 		// créer un objet LocalDateTime à la date heure 12h00m00s 01/01/2018
@@ -25,7 +25,6 @@ public class DateAndTime_04_Test {
 		int minutes = result.getMinute();
 		int second = result.getSecond();
 		int year = result.getYear();
-		;
 		Month month = result.getMonth();
 		int dayOfMonth = result.getDayOfMonth();
 

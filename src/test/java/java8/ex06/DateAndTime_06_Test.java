@@ -13,18 +13,18 @@ import static org.junit.Assert.*;
  */
 public class DateAndTime_06_Test {
 
-    @Test
-    public void test_period() throws Exception {
+	@Test
+	public void test_period() throws Exception {
 
-        // créer une LocalDate au 31/12/2017
-        LocalDate localDate1 = LocalDate.of(2017, 12, 31);
+		// créer une LocalDate au 31/12/2017
+		LocalDate localDate1 = LocalDate.of(2017, 12, 31);
 
-        // créer une LocalDate au 01/01/2050
-        LocalDate localDate2 = LocalDate.of(2050, 01, 01);
+		// créer une LocalDate au 01/01/2050
+		LocalDate localDate2 = LocalDate.of(2050, 01, 01);
 
-        // créer une période (classe java.time.Period) à entre les 2 précédentes dates
-        Period result = Period.between(localDate1, localDate2);
+		// créer une période (classe java.time.Period) à entre les 2 précédentes dates
+		Period result = Period.between(localDate1, localDate2);
 
-        assertThat(result.toTotalMonths(), is(384L));
-    }
+		assertThat(result.toTotalMonths(), is(384L));
+	}
 }
